@@ -1,0 +1,35 @@
+<!--
+
+classDiagram
+  class Applications{
+    *INTEGER id
+    TIMESTAMP created_at
+    DATE date NOT NULL
+    TEXT name_service NOT NULL
+    TEXT payment NOT NULL
+    NULL status
+    INTEGER user_id NOT NULL
+  }
+  class Users{
+    *INTEGER id
+    TEXT login NOT NULL
+    TEXT password NOT NULL
+    INTEGER role_id NOT NULL
+  }
+  class Roles{
+    *INTEGER id
+    TEXT role_name NOT NULL
+  }
+  class Feedbacks{
+    *INTEGER id
+    INTEGER application_id NOT NULL
+    TEXT comment NOT NULL
+    INTEGER user_id NOT NULL
+  }
+  Users "1" -- "0..n" Applications
+  Roles "1" -- "0..n" Users
+  Applications "1" -- "0..n" Feedbacks
+  Users "1" -- "0..n" Feedbacks
+
+-->
+![](https://mermaid.ink/img/Y2xhc3NEaWFncmFtCiAgY2xhc3MgQXBwbGljYXRpb25zewogICAgKklOVEVHRVIgaWQKICAgIFRJTUVTVEFNUCBjcmVhdGVkX2F0CiAgICBEQVRFIGRhdGUgTk9UIE5VTEwKICAgIFRFWFQgbmFtZV9zZXJ2aWNlIE5PVCBOVUxMCiAgICBURVhUIHBheW1lbnQgTk9UIE5VTEwKICAgIE5VTEwgc3RhdHVzCiAgICBJTlRFR0VSIHVzZXJfaWQgTk9UIE5VTEwKICB9CiAgY2xhc3MgVXNlcnN7CiAgICAqSU5URUdFUiBpZAogICAgVEVYVCBsb2dpbiBOT1QgTlVMTAogICAgVEVYVCBwYXNzd29yZCBOT1QgTlVMTAogICAgSU5URUdFUiByb2xlX2lkIE5PVCBOVUxMCiAgfQogIGNsYXNzIFJvbGVzewogICAgKklOVEVHRVIgaWQKICAgIFRFWFQgcm9sZV9uYW1lIE5PVCBOVUxMCiAgfQogIGNsYXNzIEZlZWRiYWNrc3sKICAgICpJTlRFR0VSIGlkCiAgICBJTlRFR0VSIGFwcGxpY2F0aW9uX2lkIE5PVCBOVUxMCiAgICBURVhUIGNvbW1lbnQgTk9UIE5VTEwKICAgIElOVEVHRVIgdXNlcl9pZCBOT1QgTlVMTAogIH0KICBVc2VycyAiMSIgLS0gIjAuLm4iIEFwcGxpY2F0aW9ucwogIFJvbGVzICIxIiAtLSAiMC4ubiIgVXNlcnMKICBBcHBsaWNhdGlvbnMgIjEiIC0tICIwLi5uIiBGZWVkYmFja3MKICBVc2VycyAiMSIgLS0gIjAuLm4iIEZlZWRiYWNrcw==)

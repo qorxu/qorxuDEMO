@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for item in admin_application %}
+    <p>{{ item[0] }}</p>
+    <p>{{ item[1] }}</p>
+    <p>{{ item[2] }}</p>
+    <p>{{ item[3] }}</p>
+    <p>{{ item[4] }}</p>
+    <p>{{ item[5] }}</p>
+
+    <form method="post" action="/update_status" style="display: inline;">
+        <input type="hidden" name="id" value="{{ item[0] }}">
+        <button type="submit" name="status" value="Процессе">Процессе</button>
+        <button type="submit" name="status" value="Готово">Готово</button>
+    </form>
+    {% endfor %}
+</body>
+</html>
